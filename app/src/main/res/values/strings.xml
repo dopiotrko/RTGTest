@@ -13,4 +13,11 @@
     <string name="startButtonLabel">Start Test</string>
     <string name="endText">Zakończ</string>
     <string name="rtg_do_opisania">RTG do opisania</string>
+    <string name="odpOpis1">Gratuluje</string>
+    <string name="odpOpis2">Przyglądałeś się obrazowi przez</string>
+    <string name="odpOpis3">sekund.</string>
+    <string name="odpOpis4">Opisz go poniżej i wyślij odpowiedź.</string>
+    <string name="send">Wyślij</string>
+    <string name="lastButtonLabel">Zakończ</string>
+    <string name="finalText">Wysłano</string>
 </resources>

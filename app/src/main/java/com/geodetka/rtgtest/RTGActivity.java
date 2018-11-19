@@ -1,8 +1,10 @@
 package com.geodetka.rtgtest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Callback;
@@ -16,6 +18,7 @@ public class RTGActivity extends AppCompatActivity {
     private String surname;
     private String email;
     private String url;
+    private long startTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +48,19 @@ public class RTGActivity extends AppCompatActivity {
                         Log.e(TAG, "onError: ", e);
                     }
                 });
+        startTime = System.currentTimeMillis();
+    }
+
+    protected void onClick(View v){
+        Intent intent = new Intent(this, OdpActivity.class);
+        intent.putExtra("name", name);
+        intent.putExtra("surname", surname);
+        intent.putExtra("email", email);
+        int rtgId = 1;
+        intent.putExtra("rtgId", rtgId);
+        long time = (System.currentTimeMillis() - startTime)/1000;
+        intent.putExtra("time", time);
+        startActivity(intent);
+        this.finish();
     }
 }
