@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RTG Test</string>
+    <string name="emailHint">Wpisz email</string>
+    <string name="NameLabel">Imię:</string>
+    <string name="emailLabel">email:</string>
+    <string name="SurnameHint">Wpisz Nazwisko</string>
+    <string name="SurnameLabel">Nazwisko:</string>
+    <string name="NameHint">Wpisz Imię</string>
+    <string name="AppDescription">Wpisz swoje dane:</string>
+    <string name="ButtonText">Dalej</string>
+    <string name="opis1">Przechdzisz test jako:</string>
+    <string name="opis2">Naciśnij start, aby zobaczyć zdjęcie. Potem naciśnij na zdjęcie, aby je zamknąć i otworzyć formularz na opis zdjęcia. Pamiętaj że dla oceny istotny jest czas wyświetlania zdjęcia.</string>
+    <string name="startButtonLabel">Start Test</string>
+    <string name="endText">Zakończ</string>
+    <string name="rtg_do_opisania">RTG do opisania</string>
+</resources>
