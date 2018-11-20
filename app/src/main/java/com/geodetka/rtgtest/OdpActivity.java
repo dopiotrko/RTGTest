@@ -55,14 +55,12 @@ public class OdpActivity extends AppCompatActivity implements TaskCompleted{
 
     public void onClick(View view) {
         if(!sent) {
-
-            new getJson(OdpActivity.this).execute("http://www.rtgobrazki.ugu.pl/api/rtg/read.php");
-    //       answerText.setText(rtgJsonString);
-
             button.setText(getString(R.string.lastButtonLabel));
             textFinal.setText(getString(R.string.finalText));
             answer = answerText.getText().toString();
             answerText.setFocusable(false);
+            new getJson(OdpActivity.this).execute("http://www.rtgobrazki.ugu.pl/api/rtg/read.php");
+            //       answerText.setText(rtgJsonString);
             sent = true;
         }
         else {
