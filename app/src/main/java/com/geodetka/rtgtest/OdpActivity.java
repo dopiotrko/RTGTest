@@ -6,9 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
-public class OdpActivity extends AppCompatActivity {
+public class OdpActivity extends AppCompatActivity implements TaskCompleted{
 
     private String name;
     private String surname;
@@ -22,6 +23,11 @@ public class OdpActivity extends AppCompatActivity {
     private TextView opis;
     private EditText answerText;
 
+    @Override
+    public void onTaskComplete(String result) {
+
+        Toast.makeText(this,"The result is " + result ,Toast.LENGTH_LONG).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +37,7 @@ public class OdpActivity extends AppCompatActivity {
         name = getIntent().getStringExtra("name");
         surname = getIntent().getStringExtra("surname");
         email = getIntent().getStringExtra("email");
-        rtgID = getIntent().getIntExtra("rtgId", 0);
+        rtgID = getIntent().getIntExtra("rtg_id", 0);
         time = getIntent().getLongExtra("time", 0);
         answerText = findViewById(R.id.answerText);
         textFinal = findViewById(R.id.textFinal);
@@ -49,6 +55,10 @@ public class OdpActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         if(!sent) {
+
+            new getJson(OdpActivity.this).execute("http://www.rtgobrazki.ugu.pl/api/rtg/read.php");
+    //       answerText.setText(rtgJsonString);
+
             button.setText(getString(R.string.lastButtonLabel));
             textFinal.setText(getString(R.string.finalText));
             answer = answerText.getText().toString();

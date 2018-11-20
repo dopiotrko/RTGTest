@@ -13,11 +13,10 @@ import com.squareup.picasso.Picasso;
 public class RTGActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
-    private Picasso mPicasso;
     private String name;
     private String surname;
     private String email;
-    private String url;
+    private int rtg_id;
     private long startTime;
 
     @Override
@@ -28,13 +27,12 @@ public class RTGActivity extends AppCompatActivity {
         name = getIntent().getStringExtra("name");
         surname = getIntent().getStringExtra("surname");
         email = getIntent().getStringExtra("email");
-
-        url = "http://www.rtgobrazki.ugu.pl/image01.jpg";
+        String rtg_url = getIntent().getStringExtra("rtg_url");
+        rtg_id = getIntent().getIntExtra("rtg_id", 0);
 
         ImageView RTGimg = findViewById(R.id.rtgImage);
-        mPicasso = new PicassoModule().getPicasso(this);
-        String url = "http://www.rtgobrazki.ugu.pl/image01.jpg";
-        mPicasso.load(url)
+        Picasso mPicasso = new PicassoModule().getPicasso(this);
+        mPicasso.load(rtg_url)
                 .placeholder(com.geodetka.rtgtest.R.color.placeholderColor)
                 .error(com.geodetka.rtgtest.R.color.errorColor)
                 .into(RTGimg, new Callback() {
@@ -56,8 +54,7 @@ public class RTGActivity extends AppCompatActivity {
         intent.putExtra("name", name);
         intent.putExtra("surname", surname);
         intent.putExtra("email", email);
-        int rtgId = 1;
-        intent.putExtra("rtgId", rtgId);
+        intent.putExtra("rtg_id", rtg_id);
         long time = (System.currentTimeMillis() - startTime)/1000;
         intent.putExtra("time", time);
         startActivity(intent);
