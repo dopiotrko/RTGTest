@@ -49,7 +49,7 @@ public class RTGActivity extends AppCompatActivity {
         startTime = System.currentTimeMillis();
     }
 
-    protected void onClick(View v){
+    public void onClick(View v){
         Intent intent = new Intent(this, OdpActivity.class);
         intent.putExtra("name", name);
         intent.putExtra("surname", surname);

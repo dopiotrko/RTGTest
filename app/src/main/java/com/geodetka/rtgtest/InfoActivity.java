@@ -26,7 +26,7 @@ public class InfoActivity extends AppCompatActivity implements TaskCompleted{
         setContentView(R.layout.activity_info);
 
         new getJson(InfoActivity.this)
-                .execute("http://www.rtgobrazki.ugu.pl/api/rtg/read.php", "");
+                .execute("http://dopiotrko.heliohost.org/api/rtg/read.php", "");
         name = getIntent().getStringExtra("name");
         surname = getIntent().getStringExtra("surname");
         email = getIntent().getStringExtra("email");

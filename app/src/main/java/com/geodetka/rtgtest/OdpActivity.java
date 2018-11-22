@@ -75,6 +75,6 @@ public class OdpActivity extends AppCompatActivity implements TaskCompleted{
             e.printStackTrace();
         }
         new getJson(OdpActivity.this)
-                .execute("http://www.rtgobrazki.ugu.pl/api/answer/create.php", jsonBody);
+                .execute("http://dopiotrko.heliohost.org/api/answer/create.php", jsonBody);
     }
 }
