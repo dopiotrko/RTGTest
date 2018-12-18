@@ -38,6 +38,6 @@ it counts the time it is displayed, then asks for a description of the picture,
 
 puts everything in the database.
 
-#Dodatlowo
+#Addons
 
 I had to write a REST api application in php that intervenes between the database and the above database application
